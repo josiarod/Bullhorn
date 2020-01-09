@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Twitt List</h2><br/>
+<a href="/add">Add a twitt</a><br />
+<div th:each="twitt : ${twitts}">
+   <h3>Content:</h3> <p th:text="${twitt.content}"></p>
+   <h3>Sent By:</h3> <h4 th:inline="text">[[${twitt.sentby}]]</h4>
+    <h3>Posted Date:</h3>  <p th:text="${twitt.posteddate}"></p>
+</div>
+</body>
+</html>
