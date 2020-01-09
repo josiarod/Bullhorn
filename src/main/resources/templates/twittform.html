@@ -9,10 +9,11 @@
 <div class="container" style="background-color: powderblue;">
     <div class="jumbotron">
 <h2 style="color:blue">Write Your Message</h2>
-<form action="#"
-      th:action="@{/process}"
+<form action="/add"
+      th:action="@{/add}"
       th:object="${twitt}"
-      method="post">
+      method="POST"
+      enctype="multipart/form-data">
      <input type="hidden" th:field="*{id}" />
     Content :<textarea rows="4" th:field="*{content}" />
     <span th:if="${#fields.hasErrors('content')}"
@@ -24,6 +25,7 @@
     <span th:if="${#fields.hasErrors('sentby')}"
           th:errors="*{sentby}"></span><br />
     <br />
+    <input type="file" name="file"><br/><br/>
     <input type="submit" value="Submit" class="btn-primary btn-lg"/>
 </form>
     </div>

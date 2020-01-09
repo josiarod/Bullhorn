@@ -21,12 +21,14 @@ public class Twitt {
     private String content;
 
     @NotNull
-    @Size(min=4)
+    @Size(min=1)
     private String posteddate;
 
     @NotNull
     @Size(min=1)
     private String sentby;
+    
+    private String image;
 
     public long getId() {
         return id;
@@ -61,4 +63,15 @@ public class Twitt {
     public void setPosteddate(String posteddate) {
         this.posteddate = posteddate;
     }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+//
+//    public void image(String url) {
+//    }
 }
